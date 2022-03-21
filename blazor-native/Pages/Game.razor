@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+<SKGLView class="scaler "
+    
+    OnPaintSurface="OnPaintSurface" 
+    @onkeydown="@KeyDown"
+    @onpointerdown="@PointerDown"
+    @onkeyup="@KeyUp"
+    @onpointermove="@PointerMoved"
+    EnableRenderLoop="true" 
+    tabindex="0" />
+
+@code {
+   
+}

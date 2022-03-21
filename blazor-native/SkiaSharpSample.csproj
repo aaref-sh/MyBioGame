@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<WasmBuildNative>true</WasmBuildNative>
+	</PropertyGroup>
+
+	<!-- In debug, make builds faster by reducing optimizations -->
+	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+		<WasmNativeStrip>false</WasmNativeStrip>
+		<EmccCompileOptimizationFlag>-O1</EmccCompileOptimizationFlag>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-rc.2.21470.37" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-rc.2.21470.37" PrivateAssets="all" />
+		<PackageReference Include="SkiaSharp" Version="2.88.0-preview.145" />
+		<PackageReference Include="SkiaSharp.NativeAssets.WebAssembly" Version="2.88.0-preview.145" />
+		<PackageReference Include="SkiaSharp.Views.Blazor" Version="2.88.0-preview.232" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SkiaSharp.Views.Blazor\SkiaSharp.Views.Blazor.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<NativeFileReference Include="$(SkiaSharpStaticLibraryPath)\2.0.23\*.a" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\airplan.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\loading.gif">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\sounds\boom.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="wwwroot\sounds\shot.mp3">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+</Project>
