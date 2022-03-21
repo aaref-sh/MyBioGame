@@ -29,9 +29,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="wwwroot\airplan.png">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
 	  <Content Update="wwwroot\loading.gif">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
